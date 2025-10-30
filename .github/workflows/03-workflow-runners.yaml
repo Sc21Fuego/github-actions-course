@@ -17,7 +17,7 @@ jobs:
           - name: Show OS
             run: |
               write-host "This job is running on a Windows runner"
-              write-host "Runner OS: $RUNNER_OS"
+              write-host "Runner OS: " + $RUNNER_OS
     mac-echo:
         runs-on: macos-latest
         steps:
