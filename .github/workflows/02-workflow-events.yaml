@@ -1,12 +1,12 @@
 name: 02 - Workflow Events
 on: 
-  push:
-    branches:
-      - main
-  pull_request:
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
   workflow_dispatch:
-  schedule:
-    - cron: "05 13 30 10 Thu" # At 13:05 on October 30th if it is a Thursday
+#  schedule:
+#    - cron: "05 13 30 10 Thu" # At 13:05 on October 30th if it is a Thursday
 
 jobs: 
   echo:
