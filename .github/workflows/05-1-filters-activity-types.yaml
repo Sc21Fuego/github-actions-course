@@ -3,7 +3,8 @@ name: 05 - 1 - Filters and Activity Types
 on:
   pull_request:
     types: [opened, synchronize]
-    branches: main
+    branches: 
+      - main
 
 jobs:
   echo:
