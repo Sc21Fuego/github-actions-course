@@ -17,6 +17,4 @@ jobs:
         working-directory: 04-using-actions/react-app
         run: |
           npm run test
-          a
-          q
-          
+
