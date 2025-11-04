@@ -10,19 +10,36 @@ on:
 
 run-name: 06 - Contexts | DEBUG - ${{ inputs.debug }}
 
+env:
+  MY_WORKFLOW_VAR: 'workflow'
+  MY_OVERWRITTEN_VAR: 'workflow'
+
 jobs: 
   echo-data:
+    env:
+      MY_JOB_VAR: 'job'
+      MY_OVERWRITTEN_VAR: 'job'
     runs-on: ubuntu-latest
     steps:
       - name: Display Information
         run: |
-          echo "Event name: <retrieve the event name here>"
-          echo "Ref: <retrieve the ref here>"
-          echo "SHA: <retrieve the commit sha here>"
-          echo "Actor: <retrieve the actor name here>"
-          echo "Workflow: <retrieve the workflow name here>"
-          echo "Run ID: <retrieve the run ID here>"
-          echo "Run number: <retrieve the run number here>"
+          echo "Event name: ${{ github.event_name }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Run number: ${{ github.run_number }}"
       - name: Retrieve Variable
         run: |
           echo "${{ vars.MY_VAR }}"
+      - name: Print Env Variables
+        env:
+          MY_OVERWRITTEN_VAR: 'step'
+        run: |
+          echo "Workflow env: ${{ env.MY_WORKFLOW_VAR }}"
+          echo "Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
+      - name: Print Env Variables without locally overwriting MY_OVERWRITTEN_VAR
+        run: |
+          echo "Workflow env: ${{ env.MY_WORKFLOW_VAR }}"
+          echo "Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
