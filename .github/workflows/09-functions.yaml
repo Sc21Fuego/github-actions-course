@@ -16,6 +16,7 @@ jobs:
       - name: Sleep for 20 seconds
         run: |
           sleep 20
+          echo "I have slept"
       - name: I will execute
         if: ${{ !success() }}
         run: |
