@@ -1,7 +1,7 @@
 name: 05 - 1 - Filters and Activity Types
 
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
   echo:
