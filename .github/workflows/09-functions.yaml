@@ -13,7 +13,9 @@ jobs:
         if: ${{ success() }}
         run: |
           echo "I will print if the previous steps succeeded"
-      - name: I will execute
+      - name: Sleep for 20 seconds
+        run: 'sleep 20'
+        - name: I will execute
         if: ${{ !success() }}
         run: |
           echo "I will print if any previous step fails."
@@ -24,6 +26,5 @@ jobs:
       - name: I will execute when cancelled
         if: ${{ cancelled() }}
         run: 'echo "I will only execute if the workflow is cancelled"'
-      - name: Sleep for 20 seconds
-        run: "sleep 20"
+
 
