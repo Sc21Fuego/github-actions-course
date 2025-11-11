@@ -14,7 +14,8 @@ jobs:
         run: |
           echo "I will print if the previous steps succeeded"
       - name: Sleep for 20 seconds
-        run: 'sleep 20'
+        run: |
+          sleep 20
       - name: I will execute
         if: ${{ !success() }}
         run: |
