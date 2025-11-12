@@ -17,5 +17,6 @@ jobs:
         run: echo "GITHUB_OUTPUT is located at $GITHUB_OUTPUT"
       - name: Build
         id: build
-        run: echo "$inputs.build-status" >> "$GITHUB_OUTPUT"
+        run: echo "${{ inputs.build-status }}" >> "$GITHUB_OUTPUT"
+
       
