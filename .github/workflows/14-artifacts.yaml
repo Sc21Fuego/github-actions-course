@@ -1,10 +1,10 @@
 name: 14 - Working with Artifacts
 on: workflow_dispatch
-defaults:
-  run:
-    working-directory: ./14-artifacts/react-app
 jobs:
   test-build:
+    defaults:
+      run:
+        working-directory: ./14-artifacts/react-app
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
